@@ -1,7 +1,7 @@
 import EventEmitter from "events"
-import { lg } from "."
+import { lg } from "../logger"
 
-export default () => {
+export const eventEmitter = () => {
     const emitter = new EventEmitter()
     const bangCallback = () => lg("BANG!")
 

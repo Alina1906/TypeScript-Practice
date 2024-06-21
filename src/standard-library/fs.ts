@@ -1,8 +1,8 @@
-import { lg } from "."
+import { lg } from "../logger"
 import fse from "fs-extra"
 import path from "path"
 
-export default async () => {
+export const fsExtra = async () => {
     try {
         const name = 'test.txt'
         const content = "THIS IS A STRING \n"

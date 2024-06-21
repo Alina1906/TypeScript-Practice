@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 class Product {
     parts: string[] = []
@@ -49,7 +49,7 @@ class Director {
     }
 }
 
-export default () => {
+export const builder = () => {
     const builder: Builder = new ConcreteBuilder()
     const director: Director = new Director(builder)
 

@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 interface CargoStore {
     sayHello(): boolean
@@ -35,7 +35,7 @@ class OilBuildingCompany implements BuildingCompany {
 }
 
 
-export default () => {
+export const fabricMethod = () => {
     const MoscowMetalBuilder: BuildingCompany = new MetalBuildingCompany()
     const SokolnikiMetalStore: CargoStore = MoscowMetalBuilder.createCargoStore()
     SokolnikiMetalStore.sayHello()

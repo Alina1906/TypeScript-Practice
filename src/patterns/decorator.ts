@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 interface Component {
     operation(): string
@@ -35,7 +35,7 @@ class ConcreteDecoratorB extends Decorator {
 }
 
 
-export default () => {
+export const decorator = () => {
     const simpleComponent = new ConcreteComponent()
     lg(simpleComponent.operation())
 

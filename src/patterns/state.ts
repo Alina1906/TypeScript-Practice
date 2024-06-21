@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 interface State {
     handle(): void
@@ -32,7 +32,7 @@ class Context {
     }
 }
 
-export default () => {
+export const state = () => {
     const context: Context = new Context()
     context.request()
     context.setState(new ConcreteStateB())

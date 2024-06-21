@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 class Singleton {
     private static instance: Singleton
@@ -17,10 +17,10 @@ class Singleton {
     }
 }
 
-const instance1: Singleton = Singleton.getInstance()
-const instance2: Singleton = Singleton.getInstance()
+export const singleton = () => {
+    const instance1: Singleton = Singleton.getInstance()
+    const instance2: Singleton = Singleton.getInstance()
 
-export default () => {
     instance1.log()
     instance2.log()
 }

@@ -1,4 +1,4 @@
-import { lg } from ".."
+import { lg } from "../logger"
 
 abstract class AbstractProductA {
     abstract methodA(): void
@@ -34,7 +34,7 @@ class ConcreteFactory implements AbstractFactory {
     }
 }
 
-export default () => {
+export const abstractFactory = () => {
     const factory1: AbstractFactory = new ConcreteFactory()
     const productA = factory1.createProductA()
     const productB = factory1.createProductB()

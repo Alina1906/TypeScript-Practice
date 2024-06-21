@@ -1,4 +1,4 @@
-import { lg } from "."
+import { lg } from "../logger"
 
 function log(
     target: Object,
@@ -15,9 +15,11 @@ function log(
     return descriptor
 }
 
-export class Calculator {
+class Calculator {
     @log
     add(a: number, b: number): number {
         return a + b
     }
 }
+
+export const decorator = new Calculator()
