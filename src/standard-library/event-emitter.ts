@@ -1,9 +1,9 @@
 import EventEmitter from "events"
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 export const eventEmitter = () => {
     const emitter = new EventEmitter()
-    const bangCallback = () => lg("BANG!")
+    const bangCallback = () => lg(formPath(__filename), "BANG!")
 
     emitter.on("bang",bangCallback)
 

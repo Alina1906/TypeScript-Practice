@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 function log(
     target: Object,
@@ -8,7 +8,7 @@ function log(
     const originalMethod = descriptor.value
 
     descriptor.value = function (...args: any[]) {
-        lg(`Calling ${propertyKey} with arguments: ${args}`)
+        lg(formPath(__filename), `Calling ${propertyKey} with arguments: ${args}`)
         return originalMethod.apply(this, args)
     }
 

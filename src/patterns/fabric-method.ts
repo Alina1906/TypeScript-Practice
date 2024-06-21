@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 interface CargoStore {
     sayHello(): boolean
@@ -6,14 +6,14 @@ interface CargoStore {
 
 class MetalCargoStore implements CargoStore {
     public sayHello(): boolean {
-        lg("I'm a metal store!")
+        lg(formPath(__filename), "I'm a metal store!")
         return true
     }
 }
 
 class OilCargoStore implements CargoStore {
     public sayHello(): boolean {
-        lg("I'm an oil store!")
+        lg(formPath(__filename), "I'm an oil store!")
         return true
     }
 }

@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 interface State {
     handle(): void
@@ -6,13 +6,13 @@ interface State {
 
 class ConcreteStateA implements State {
     public handle(): void {
-        lg("A")
+        lg(formPath(__filename), "A")
     }
 }
 
 class ConcreteStateB implements State {
     public handle(): void {
-        lg("B")
+        lg(formPath(__filename), "B")
     }
 }
 

@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 class Singleton {
     private static instance: Singleton
@@ -13,7 +13,7 @@ class Singleton {
     }
 
     public log(): void {
-        lg("I'm singleton")
+        lg(formPath(__filename), "I'm singleton")
     }
 }
 

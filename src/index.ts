@@ -14,8 +14,20 @@ import {
     string,
     decorator as standardLibDecorator,
     eventEmitter,
-    fsExtra
+    fsExtra,
+    promise,
 } from "./standard-library"
+
+import {
+    blfp
+} from "./test-cases"
+
+standardLibDecorator.add(1, 2)
+eventEmitter()
+fsExtra()
+array()
+string()
+promise()
 
 state()
 fabricMethod()
@@ -24,6 +36,4 @@ abstractFactory()
 builder()
 decorator()
 
-standardLibDecorator.add(1, 2)
-eventEmitter()
-fsExtra()
+blfp()

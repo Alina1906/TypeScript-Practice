@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 abstract class AbstractProductA {
     abstract methodA(): void
@@ -15,13 +15,13 @@ interface AbstractFactory {
 
 class ConcreteProductA extends AbstractProductA {
     public methodA(): void {
-        lg("Concrete product A method")
+        lg(formPath(__filename), "Concrete product A method")
     }
 }
 
 class ConcreteProductB extends AbstractProductB {
     public methodB(): void {
-        lg("Concrete product B method")
+        lg(formPath(__filename), "Concrete product B method")
     }
 }
 

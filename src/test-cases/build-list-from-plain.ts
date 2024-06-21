@@ -1,3 +1,5 @@
+import { formPath, lg } from "../logger"
+
 type listItem = {
     name: string,
     id: number,
@@ -8,7 +10,22 @@ type categoryItem = listItem & {
     children?: Map<number, categoryItem>
 }
 
-export default function() {
+function createTree(data: listItem[], parentId: number | null): Map<number, categoryItem> {
+    let result: Map<number, categoryItem> = new Map()
+
+    const filtered = data.filter(item => item.parent_id === parentId)
+
+    filtered.forEach(item => {
+        result.set(item.id, {
+            ...item,
+            children: createTree(data, item.id)
+        })
+    })
+
+    return result
+}
+
+export const blfp = () => {
     const data: listItem[] = [
         { "name": "Блузы", "id": 493, "parent_id": 71026 },
         { "name": "Батон нарезной", "id": 4171, "parent_id": 15601 },
@@ -32,20 +49,6 @@ export default function() {
         { "name": "Каталог", "id": 93477, "parent_id": null }
     ]
 
-    function createTree(data: listItem[], parentId: number | null): Map<number, categoryItem> {
-        let result: Map<number, categoryItem> = new Map()
-
-        const filtered = data.filter(item => item.parent_id === parentId)
-
-        filtered.forEach(item => {
-            result.set(item.id, {
-                ...item,
-                children: createTree(data, item.id)
-            })
-        })
-
-        return result
-    }
-
-    return createTree(data, null)
+    const tree = createTree(data, null)
+    lg(formPath(__filename), tree)
 }

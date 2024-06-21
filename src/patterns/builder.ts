@@ -1,10 +1,10 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 class Product {
     parts: string[] = []
 
     public logParts(): void {
-        lg(`Product parts: ${this.parts.join(', ')}`)
+        lg(formPath(__filename), `Product parts: ${this.parts.join(', ')}`)
     }
 }
 

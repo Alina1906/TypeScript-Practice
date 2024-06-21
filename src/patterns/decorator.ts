@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 interface Component {
     operation(): string
@@ -37,11 +37,11 @@ class ConcreteDecoratorB extends Decorator {
 
 export const decorator = () => {
     const simpleComponent = new ConcreteComponent()
-    lg(simpleComponent.operation())
+    lg(formPath(__filename), simpleComponent.operation())
 
     const decoratedComponentA: Decorator = new ConcreteDecoratorA(simpleComponent)
-    lg(decoratedComponentA.operation())
+    lg(formPath(__filename), decoratedComponentA.operation())
 
     const decoratedComponentB: Decorator = new ConcreteDecoratorB(simpleComponent)
-    lg(decoratedComponentB.operation())
+    lg(formPath(__filename), decoratedComponentB.operation())
 }

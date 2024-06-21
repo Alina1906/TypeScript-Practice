@@ -1,4 +1,4 @@
-import { lg } from "../logger"
+import { formPath, lg } from "../logger"
 
 export const promise = () => {
     const promise: Promise<number> = new Promise((resolve, reject) => {
@@ -6,8 +6,8 @@ export const promise = () => {
 })
 
 promise.then((result) => {
-    lg(result)
+    lg(formPath(__filename), result)
 }, (reason) => {
-    lg(reason)
+    lg(formPath(__filename), reason)
 })
 }
