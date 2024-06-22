@@ -6,7 +6,9 @@ import {
     decorator,
     fabricMethod,
     singleton,
-    state
+    state,
+    prototype,
+    adapter,
 } from "./patterns"
 
 import {
@@ -19,7 +21,7 @@ import {
 } from "./standard-library"
 
 import {
-    blfp
+    blfp,
 } from "./test-cases"
 
 standardLibDecorator.add(1, 2)
@@ -35,5 +37,7 @@ singleton()
 abstractFactory()
 builder()
 decorator()
+prototype()
+adapter()
 
 blfp()
