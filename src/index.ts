@@ -10,7 +10,9 @@ import {
     prototype,
     adapter,
     bridge,
+    composite,
 } from "./patterns"
+import { facade } from "./patterns/facade"
 
 import {
     array,
@@ -41,5 +43,7 @@ decorator()
 prototype()
 adapter()
 bridge()
+composite()
+facade()
 
 blfp()
