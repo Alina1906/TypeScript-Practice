@@ -9,6 +9,7 @@ import {
     state,
     prototype,
     adapter,
+    bridge,
 } from "./patterns"
 
 import {
@@ -39,5 +40,6 @@ builder()
 decorator()
 prototype()
 adapter()
+bridge()
 
 blfp()
