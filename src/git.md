@@ -1,25 +1,24 @@
 # Git management
-
+### git status
 ### git branch
 ### git checkout
 ### git merge
-### git mergetool
-### git log
-### git stash
-### git tag
 ### git pull
 ### git push
+### git commit
+
+### git stash
+### git tag
 ### git remote
 ### git archive
 ### git submodule
 ### git switch
 ### git fetch
-### git commit
 ### git rebase
 ### git diff
-### git status
 ### git show
 ### git mv
+### git mergetool
 
 ### git reset
 * `git reset --soft HEAD~1` - удалить последний коммит, но сохранить разницу в индексе
@@ -28,6 +27,7 @@
 
 ### git log
 * `git log` - показывает историю коммитов
+* `git reflog` - тоже самое, только компактнее
 
 ## Добавление/Удаление/Восстановление
 ### git add
