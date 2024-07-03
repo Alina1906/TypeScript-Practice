@@ -2,3 +2,5 @@
 /node_modules
 /.idea
 /.vscode
+/src/webpack/build
+/src/webpack/node_modules
