@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const webpack = require("webpack")
 module.exports = (env) => {
     return {
-        mode: env.mode ?? "development",
-        entry: path.resolve(__dirname, "src", "index.ts"),
+        mode: env.mode ?? "development", //режим работы - дев или прод
+        entry: path.resolve(__dirname, "src", "index.ts"), //точка входа в приложение
         output: { //для определения папки, куда все создастся
             path: path.resolve(__dirname, "build"),
             filename: "[name].[contenthash].bundle.js",
