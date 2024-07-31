@@ -21,3 +21,12 @@ jobs:
 
       - name: run tests
         run: npx jest
+
+      - name: submit to Zephyr
+        env:
+          ZEPHYR_TOKEN: ${{ secrets.ZEPHYR_TOKEN }}
+        run: |
+          curl \
+          -H "Authorization: Bearer ${ZEPHYR_TOKEN}" \
+          -F "file=@reports/junit/junit.xml;type=application/xml" \
+          https://api.zephyrscale.smartbear.com/v2/automations/executions/junit?projectKey="KAN"&autoCreateTestCases=true
