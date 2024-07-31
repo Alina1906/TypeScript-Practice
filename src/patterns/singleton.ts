@@ -15,12 +15,15 @@ class Singleton {
     public log(): void {
         lg(formPath(__filename), "I'm singleton")
     }
+
+    public return_1(): true { return true }
 }
 
-export const singleton = () => {
+export const singleton = (): true => {
     const instance1: Singleton = Singleton.getInstance()
     const instance2: Singleton = Singleton.getInstance()
 
     instance1.log()
     instance2.log()
+    return instance1.return_1()
 }

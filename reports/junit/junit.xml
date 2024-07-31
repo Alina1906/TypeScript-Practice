@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="0" errors="0" time="1.671">
+  <testsuite name="Singleton Test" errors="0" failures="0" skipped="0" timestamp="2024-07-31T18:24:13" time="1.614" tests="1">
+    <testcase classname="Singleton Test should return true working with the instance" name="Singleton Test should return true working with the instance" time="0.048">
+    </testcase>
+  </testsuite>
+</testsuites>
