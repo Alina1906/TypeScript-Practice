@@ -11,9 +11,11 @@ on:
 jobs:
   ts-tests:
     runs-on: ubuntu-latest
-    uses: actions/checkout@v4
 
     steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
       - name: Dependency installation
         run: npm i
 
