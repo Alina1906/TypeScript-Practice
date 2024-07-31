@@ -32,9 +32,10 @@ class Context {
     }
 }
 
-export const state = () => {
+export const state = (): true => {
     const context: Context = new Context()
     context.request()
     context.setState(new ConcreteStateB())
     context.request()
+    return true
 }
