@@ -27,3 +27,12 @@ jobs:
 
       - name: Build with Gradle
         run: allurectl watch -- ./gradlew clean test
+  ts-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dependency installation
+        run: npm i
+
+      - name: run tests
+        run: npx jest
